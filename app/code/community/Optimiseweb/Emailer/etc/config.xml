@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* @package    Optimiseweb_Emailer
+* @author     Kathir Vel (sid@optimiseweb.co.uk)
+* @copyright  Copyright (c) 2013 Optimiseweb Ltd
+* @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+*/
+-->
+<config>
+
+    <modules>
+        <Optimiseweb_Emailer>
+            <version>0.1.5</version>
+        </Optimiseweb_Emailer>
+    </modules>
+
+    <frontend>
+
+        <translate>
+            <modules>
+                <Optimiseweb_Emailer>
+                    <files>
+                        <default>Optimiseweb_Emailer.csv</default>
+                    </files>
+                </Optimiseweb_Emailer>
+            </modules>
+        </translate>
+
+    </frontend>
+
+    <global>
+
+        <blocks>
+            <emailer>
+                <class>Optimiseweb_Emailer_Block</class>
+            </emailer>
+        </blocks>
+
+        <helpers>
+            <emailer>
+                <class>Optimiseweb_Emailer_Helper</class>
+            </emailer>
+        </helpers>
+
+        <models>
+            <emailer>
+                <class>Optimiseweb_Emailer_Model</class>
+            </emailer>
+        </models>
+
+        <template>
+            <email>
+                <standard_text_email_template>
+                    <label>Optimise Web Standard Text Email Template</label>
+                    <file>optimiseweb/standard_text_email_template.html</file>
+                    <type>text</type>
+                </standard_text_email_template>
+                <standard_html_email_template>
+                    <label>Optimise Web Standard HTML Email Template</label>
+                    <file>optimiseweb/standard_html_email_template.html</file>
+                    <type>html</type>
+                </standard_html_email_template>
+            </email>
+        </template>
+
+    </global>
+
+</config>
