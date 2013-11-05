@@ -5,11 +5,10 @@
  *
  * @package     Optimiseweb_Emailer
  * @author      Sid Vel (sid@optimiseweb.co.uk)
- * @copyright   Copyright (c) 2013 Optimiseweb Ltd
+ * @copyright  Copyright (c) 2013 Optimise Web Limited
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-class Optimiseweb_Emailer_Helper_Data extends Mage_Core_Helper_Abstract
-{
+class Optimiseweb_Emailer_Helper_Data extends Mage_Core_Helper_Abstract {
 
     /**
      * Function to send emails
@@ -28,8 +27,7 @@ class Optimiseweb_Emailer_Helper_Data extends Mage_Core_Helper_Abstract
      * @return boolean
      * @throws Exception
      */
-    public function sendEmails($emailSenderName, $emailSenderEmail, $emailRecipientName, $emailRecipientEmail, $emailReplyTo = NULL, $emailCC = NULL, $emailBCC = NULL, $emailSubject = NULL, $emailVariables, $emailAttachment = NULL, $emailTemplate)
-    {
+    public function sendEmails($emailSenderName, $emailSenderEmail, $emailRecipientName, $emailRecipientEmail, $emailReplyTo = NULL, $emailCC = NULL, $emailBCC = NULL, $emailSubject = NULL, $emailVariables, $emailAttachment = NULL, $emailTemplate) {
         $storeId = Mage::app()->getStore()->getId();
 
         $translate = Mage::getSingleton('core/translate');
@@ -39,8 +37,8 @@ class Optimiseweb_Emailer_Helper_Data extends Mage_Core_Helper_Abstract
         $emailModel->setDesignConfig(array('area' => 'frontend'));
 
         $emailSender = array(
-                'name' => $emailSenderName,
-                'email' => $emailSenderEmail
+            'name' => $emailSenderName,
+            'email' => $emailSenderEmail
         );
 
         if (isset($emailReplyTo) AND ($emailReplyTo != FALSE))
@@ -85,8 +83,7 @@ class Optimiseweb_Emailer_Helper_Data extends Mage_Core_Helper_Abstract
      * @param type $emailDataObject
      * @return type
      */
-    public function simpleSendEmails($emailDataObject)
-    {
+    public function simpleSendEmails($emailDataObject) {
         if ($emailDataObject->senderName) {
             $emailSenderName = $emailDataObject->senderName;
         }
@@ -153,13 +150,12 @@ class Optimiseweb_Emailer_Helper_Data extends Mage_Core_Helper_Abstract
      * @return boolean
      * @throws Exception
      */
-    public function sendEmail($emailSenderName, $emailSenderEmail, $emailRecipientName, $emailRecipientEmail, $emailSubject, $emailVariables, $emailTemplate = 'standard_html_email_template')
-    {
+    public function sendEmail($emailSenderName, $emailSenderEmail, $emailRecipientName, $emailRecipientEmail, $emailSubject, $emailVariables, $emailTemplate = 'standard_html_email_template') {
         $storeId = Mage::app()->getStore()->getId();
 
         $emailSender = array(
-                'name' => $emailSenderName,
-                'email' => $emailSenderEmail
+            'name' => $emailSenderName,
+            'email' => $emailSenderEmail
         );
 
         $translate = Mage::getSingleton('core/translate');
