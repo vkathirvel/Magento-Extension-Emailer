@@ -3,7 +3,7 @@
 /**
 * @package    Optimiseweb_Emailer
 * @author     Kathir Vel (sid@optimiseweb.co.uk)
-* @copyright  Copyright (c) 2013 Optimise Web Limited
+* @copyright  Copyright (c) 2014 Optimise Web
 * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
 */
 -->
@@ -11,7 +11,7 @@
 
     <modules>
         <Optimiseweb_Emailer>
-            <version>0.1.7</version>
+            <version>0.1.8</version>
         </Optimiseweb_Emailer>
     </modules>
 
@@ -51,12 +51,12 @@
 
         <template>
             <email>
-                <standard_text_email_template>
+                <standard_text_email_template translate="label" module="emailer">
                     <label>Optimise Web Standard Text Email Template</label>
                     <file>optimiseweb/standard_text_email_template.html</file>
                     <type>text</type>
                 </standard_text_email_template>
-                <standard_html_email_template>
+                <standard_html_email_template translate="label" module="emailer">
                     <label>Optimise Web Standard HTML Email Template</label>
                     <file>optimiseweb/standard_html_email_template.html</file>
                     <type>html</type>
@@ -65,5 +65,13 @@
         </template>
 
     </global>
+    
+    <default>
+        <optimisewebemailer>
+            <general>
+                <email_template>contacts_email_email_template</email_template>
+            </general>
+        </optimisewebemailer>
+    </default>
 
 </config>
