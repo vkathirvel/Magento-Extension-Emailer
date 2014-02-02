@@ -1,5 +1,5 @@
 <_>
-   <form_key>RC6LKKA6xuA5dQi2</form_key>
+   <form_key>Qbd6HnXHLx3ggdCt</form_key>
    <name>Optimiseweb_Emailer</name>
    <channel>community</channel>
    <version_ids>
@@ -9,7 +9,7 @@
    <description>Optimiseweb_Emailer</description>
    <license>Open Software License (OSL)</license>
    <license_uri>http://opensource.org/licenses/osl-3.0.php</license_uri>
-   <version>0.1.7</version>
+   <version>0.1.9</version>
    <stability>stable</stability>
    <notes>Code tidy and formatting</notes>
    <authors>
@@ -40,7 +40,7 @@
             <max/>
          </max>
          <files>
-            <files>                    </files>
+            <files>                     </files>
          </files>
       </package>
       <extension>
@@ -62,6 +62,7 @@
          <target>mageetc</target>
          <target>magelocale</target>
          <target>magelocale</target>
+         <target>magelocale</target>
       </target>
       <path>
          <path/>
@@ -69,6 +70,7 @@
          <path>modules/Optimiseweb_Emailer.xml</path>
          <path>en_US/template/email/optimiseweb/standard_html_email_template.html</path>
          <path>en_US/template/email/optimiseweb/standard_text_email_template.html</path>
+         <path>en_US/Optimiseweb_Emailer.csv</path>
       </path>
       <type>
          <type>file</type>
@@ -76,8 +78,10 @@
          <type>file</type>
          <type>file</type>
          <type>file</type>
+         <type>file</type>
       </type>
       <include>
+         <include/>
          <include/>
          <include/>
          <include/>
@@ -90,10 +94,7 @@
          <ignore/>
          <ignore/>
          <ignore/>
+         <ignore/>
       </ignore>
    </contents>
-   <page>1</page>
-   <limit>200</limit>
-   <folder/>
-   <package/>
 </_>

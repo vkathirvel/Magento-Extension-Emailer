@@ -11,7 +11,7 @@
 
     <modules>
         <Optimiseweb_Emailer>
-            <version>0.1.8</version>
+            <version>0.1.9</version>
         </Optimiseweb_Emailer>
     </modules>
 
@@ -28,6 +28,20 @@
         </translate>
 
     </frontend>
+
+    <adminhtml>
+
+        <translate>
+            <modules>
+                <Optimiseweb_Emailer>
+                    <files>
+                        <default>Optimiseweb_Emailer.csv</default>
+                    </files>
+                </Optimiseweb_Emailer>
+            </modules>
+        </translate>
+
+    </adminhtml>
 
     <global>
 
