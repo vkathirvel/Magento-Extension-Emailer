@@ -143,7 +143,7 @@ class Optimiseweb_Emailer_Helper_Deprecated extends Mage_Core_Helper_Abstract
 
     /**
      * Function to send emails
-     *
+     * 
      * @param type $emailSenderName
      * @param type $emailSenderEmail
      * @param type $emailRecipientName
