@@ -158,7 +158,12 @@ class Optimiseweb_Emailer_Helper_Deprecated extends Mage_Core_Helper_Abstract
      * @return boolean
      * @throws Exception
      */
-    public function sendEmails($emailSenderName, $emailSenderEmail, $emailRecipientName, $emailRecipientEmail, $emailReplyTo = NULL, $emailCC = NULL, $emailBCC = NULL, $emailSubject = NULL, $emailVariables, $emailAttachment = NULL, $emailTemplate)
+    public function sendEmails($emailSenderName, $emailSenderEmail,
+                               $emailRecipientName, $emailRecipientEmail,
+                               $emailReplyTo = NULL, $emailCC = NULL,
+                               $emailBCC = NULL, $emailSubject = NULL,
+                               $emailVariables, $emailAttachment = NULL,
+                               $emailTemplate)
     {
         $storeId = Mage::app()->getStore()->getId();
 
@@ -173,14 +178,14 @@ class Optimiseweb_Emailer_Helper_Deprecated extends Mage_Core_Helper_Abstract
                 'email' => $emailSenderEmail
         );
 
-        if (isset($emailReplyTo) AND ($emailReplyTo != FALSE))
+        if (isset($emailReplyTo) AND ( $emailReplyTo != FALSE))
             $emailModel->setReplyTo($emailReplyTo);
 
         /* There are a three ways you can add CC recipients. */
         /* $emailModel->addCc('user@email.com'); */
         /* $emailModel->addCc('user@email.com', 'John Doe'); */
         /* $emailModel->addCc(array('John Doe' => 'user@email.com')); */
-        if (isset($emailCC) AND ($emailCC != FALSE)) {
+        if (isset($emailCC) AND ( $emailCC != FALSE)) {
             if ($this->ebizmartsMandillEnabled() === FALSE) {
                 $emailModel->getMail()->addCc($emailCC);
             }
@@ -189,7 +194,7 @@ class Optimiseweb_Emailer_Helper_Deprecated extends Mage_Core_Helper_Abstract
         /* There are two ways you can add BCC recipients. */
         /* $emailModel->addBcc('user@email.com'); */
         /* $emailModel->addBcc(array('user@email.com', 'user1@email.com')); */
-        if (isset($emailBCC) AND ($emailBCC != FALSE)) {
+        if (isset($emailBCC) AND ( $emailBCC != FALSE)) {
             if ($this->ebizmartsMandillEnabled() === FALSE) {
                 $emailModel->getMail()->addBcc($emailBCC);
             } else {
@@ -197,10 +202,10 @@ class Optimiseweb_Emailer_Helper_Deprecated extends Mage_Core_Helper_Abstract
             }
         }
 
-        if (isset($emailSubject) AND ($emailSubject != FALSE))
+        if (isset($emailSubject) AND ( $emailSubject != FALSE))
             $emailModel->setTemplateSubject($emailSubject);
 
-        if (isset($emailAttachment) AND ($emailAttachment != FALSE)) {
+        if (isset($emailAttachment) AND ( $emailAttachment != FALSE)) {
             foreach ($emailAttachment as $attachment) {
                 if ($this->ebizmartsMandillEnabled() === FALSE) {
                     $emailModel->getMail()->createAttachment($attachment['content'], $attachment['mime'], Zend_Mime::DISPOSITION_ATTACHMENT, Zend_Mime::ENCODING_BASE64, $attachment['filename']);
@@ -237,7 +242,10 @@ class Optimiseweb_Emailer_Helper_Deprecated extends Mage_Core_Helper_Abstract
      * @return boolean
      * @throws Exception
      */
-    public function sendEmail($emailSenderName, $emailSenderEmail, $emailRecipientName, $emailRecipientEmail, $emailSubject, $emailVariables, $emailTemplate = 'standard_html_email_template')
+    public function sendEmail($emailSenderName, $emailSenderEmail,
+                              $emailRecipientName, $emailRecipientEmail,
+                              $emailSubject, $emailVariables,
+                              $emailTemplate = 'standard_html_email_template')
     {
         $storeId = Mage::app()->getStore()->getId();
 
